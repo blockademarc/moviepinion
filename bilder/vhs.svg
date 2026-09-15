@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Animierte VHS-Kassette für die MoviePinion-Suche</title>
+  <desc id="desc">Dunkle VHS-Kassette mit goldenen Details, freier Beschriftungsfläche sowie dezent rotierenden Spulen.</desc>
+
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#51434a"/>
+      <stop offset="0.18" stop-color="#2a2026"/>
+      <stop offset="0.62" stop-color="#171116"/>
+      <stop offset="1" stop-color="#09070a"/>
+    </linearGradient>
+    <linearGradient id="bodyEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d58f"/>
+      <stop offset="0.2" stop-color="#a66d3c"/>
+      <stop offset="0.55" stop-color="#5c2f2b"/>
+      <stop offset="1" stop-color="#2b101b"/>
+    </linearGradient>
+    <linearGradient id="metalEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4c9"/>
+      <stop offset="0.3" stop-color="#d9ad61"/>
+      <stop offset="0.58" stop-color="#75472d"/>
+      <stop offset="0.82" stop-color="#edcf89"/>
+      <stop offset="1" stop-color="#4a281e"/>
+    </linearGradient>
+    <linearGradient id="label" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#fffdf5"/>
+      <stop offset="0.45" stop-color="#fff4d5"/>
+      <stop offset="1" stop-color="#e7c982"/>
+    </linearGradient>
+    <linearGradient id="wine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8445b"/>
+      <stop offset="0.5" stop-color="#7b2039"/>
+      <stop offset="1" stop-color="#3d101f"/>
+    </linearGradient>
+    <radialGradient id="hub" cx="36%" cy="30%" r="74%">
+      <stop offset="0" stop-color="#fff3c7"/>
+      <stop offset="0.25" stop-color="#e2ba6a"/>
+      <stop offset="0.58" stop-color="#936034"/>
+      <stop offset="1" stop-color="#332027"/>
+    </radialGradient>
+    <radialGradient id="tape" cx="50%" cy="50%" r="55%">
+      <stop offset="0.43" stop-color="#161116"/>
+      <stop offset="0.7" stop-color="#080608"/>
+      <stop offset="1" stop-color="#3a2023"/>
+    </radialGradient>
+    <pattern id="paperLines" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M0 27.5 H28" stroke="#6f1d35" stroke-opacity="0.075" stroke-width="1"/>
+      <path d="M27.5 0 V28" stroke="#c99952" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-15%" y="-25%" width="130%" height="165%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur"/>
+      <feOffset in="blur" dx="0" dy="19" result="offset"/>
+      <feFlood flood-color="#050305" flood-opacity="0.66" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadowLayer"/>
+      <feMerge>
+        <feMergeNode in="shadowLayer"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="smallShadow" x="-40%" y="-40%" width="180%" height="190%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="0" dy="5" result="offset"/>
+      <feFlood flood-color="#050305" flood-opacity="0.58" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadowLayer"/>
+      <feMerge>
+        <feMergeNode in="shadowLayer"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="bodyClip">
+      <path d="M69 42 H931 Q972 42 979 82 L995 397 Q999 444 951 454 H49 Q1 444 5 397 L21 82 Q28 42 69 42 Z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .reel-left {
+      transform-box: view-box;
+      transform-origin: 160px 250px;
+      animation: spin-left 8.8s linear infinite;
+    }
+    .reel-right {
+      transform-box: view-box;
+      transform-origin: 840px 250px;
+      animation: spin-right 7.1s linear infinite;
+    }
+    .tape-motion {
+      stroke-dasharray: 14 11;
+      animation: tape-run 3.4s linear infinite;
+    }
+    .led {
+      animation: led-pulse 3.6s ease-in-out infinite;
+    }
+    .shine {
+      animation: shine-pass 8s ease-in-out infinite;
+    }
+    @keyframes spin-left { to { transform: rotate(360deg); } }
+    @keyframes spin-right { to { transform: rotate(360deg); } }
+    @keyframes tape-run { to { stroke-dashoffset: -50; } }
+    @keyframes led-pulse {
+      0%, 100% { opacity: 0.3; }
+      45%, 62% { opacity: 1; }
+    }
+    @keyframes shine-pass {
+      0%, 16% { transform: translateX(-310px) skewX(-16deg); opacity: 0; }
+      26% { opacity: 0.24; }
+      44%, 100% { transform: translateX(1170px) skewX(-16deg); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reel-left, .reel-right, .tape-motion, .led, .shine { animation: none; }
+    }
+  </style>
+
+  <g filter="url(#shadow)">
+    <!-- Kassettengrundkörper -->
+    <path d="M69 42 H931 Q972 42 979 82 L995 397 Q999 444 951 454 H49 Q1 444 5 397 L21 82 Q28 42 69 42 Z"
+          fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="10"/>
+    <path d="M55 76 H945 L957 392 Q959 412 936 418 H64 Q41 412 43 392 Z"
+          fill="none" stroke="#c99952" stroke-opacity="0.44" stroke-width="4"/>
+    <path d="M87 94 H913" stroke="#fff4c6" stroke-opacity="0.22" stroke-width="6" stroke-linecap="round"/>
+    <path d="M76 395 H924" stroke="#050405" stroke-opacity="0.88" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- Sichtfenster und Band -->
+    <path d="M95 148 Q95 117 126 117 H874 Q905 117 905 148 V337 Q905 368 874 368 H126 Q95 368 95 337 Z"
+          fill="#0b080b" stroke="#6f1d35" stroke-width="6"/>
+    <path d="M151 326 Q500 403 849 326" fill="none" stroke="#030203" stroke-width="28" stroke-linecap="round"/>
+    <path class="tape-motion" d="M151 326 Q500 403 849 326" fill="none" stroke="#a77a49" stroke-opacity="0.52" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Linke Spule -->
+    <circle cx="160" cy="250" r="104" fill="url(#tape)" stroke="#181117" stroke-width="6"/>
+    <circle cx="160" cy="250" r="88" fill="none" stroke="#7b2039" stroke-opacity="0.55" stroke-width="4"/>
+    <g class="reel-left">
+      <circle cx="160" cy="250" r="56" fill="url(#hub)" stroke="#f1d391" stroke-width="5"/>
+      <g fill="#1a1117" stroke="#6f1d35" stroke-width="3">
+        <path d="M160 200 L174 229 L207 223 L184 248 L202 276 L169 270 L151 298 L146 266 L114 257 L143 241 Z"/>
+      </g>
+      <circle cx="160" cy="250" r="18" fill="#171116" stroke="#ffe3a8" stroke-width="5"/>
+      <circle cx="160" cy="250" r="6" fill="#c99952"/>
+    </g>
+
+    <!-- Rechte Spule -->
+    <circle cx="840" cy="250" r="104" fill="url(#tape)" stroke="#181117" stroke-width="6"/>
+    <circle cx="840" cy="250" r="88" fill="none" stroke="#7b2039" stroke-opacity="0.55" stroke-width="4"/>
+    <g class="reel-right">
+      <circle cx="840" cy="250" r="56" fill="url(#hub)" stroke="#f1d391" stroke-width="5"/>
+      <g fill="#1a1117" stroke="#6f1d35" stroke-width="3">
+        <path d="M840 200 L854 229 L887 223 L864 248 L882 276 L849 270 L831 298 L826 266 L794 257 L823 241 Z"/>
+      </g>
+      <circle cx="840" cy="250" r="18" fill="#171116" stroke="#ffe3a8" stroke-width="5"/>
+      <circle cx="840" cy="250" r="6" fill="#c99952"/>
+    </g>
+
+    <!-- Mittleres Etikett: die HTML-Eingaben liegen später darüber -->
+    <rect x="260" y="103" width="480" height="266" rx="20" fill="url(#label)" stroke="#c99952" stroke-width="7"/>
+    <rect x="273" y="116" width="454" height="240" rx="13" fill="url(#paperLines)" stroke="#6f1d35" stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M294 136 H706" stroke="#6f1d35" stroke-width="3" opacity="0.7"/>
+    <path d="M294 226 H706" stroke="#c99952" stroke-width="2" opacity="0.62"/>
+    <path d="M294 317 H706" stroke="#6f1d35" stroke-width="3" opacity="0.7"/>
+
+    <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+      <text x="500" y="132" fill="#6f1d35" font-size="16" font-weight="800" letter-spacing="5">MOVIEPINION</text>
+      <text x="500" y="345" fill="#5c483d" font-size="13" font-weight="700" letter-spacing="4">ARCHIV · SEARCH EDITION</text>
+    </g>
+
+    <!-- Kleine Kassettendetails -->
+    <g filter="url(#smallShadow)">
+      <g fill="url(#metalEdge)">
+        <circle cx="70" cy="91" r="16"/>
+        <circle cx="930" cy="91" r="16"/>
+        <circle cx="64" cy="401" r="16"/>
+        <circle cx="936" cy="401" r="16"/>
+      </g>
+      <g stroke="#2b1720" stroke-width="4" stroke-linecap="round">
+        <path d="M61 91 H79 M70 82 V100"/>
+        <path d="M921 91 H939 M930 82 V100"/>
+        <path d="M55 401 H73 M64 392 V410"/>
+        <path d="M927 401 H945 M936 392 V410"/>
+      </g>
+    </g>
+
+    <path d="M364 390 H636 L612 432 H388 Z" fill="#100b0f" stroke="#8f263d" stroke-width="5"/>
+    <rect x="450" y="397" width="100" height="7" rx="3.5" fill="#c99952" opacity="0.55"/>
+    <circle class="led" cx="885" cy="385" r="8" fill="#ff536c" filter="url(#smallShadow)"/>
+    <text x="866" y="390" fill="#e9c97e" font-family="'Segoe UI', Arial, sans-serif" font-size="12" text-anchor="end">PLAY</text>
+
+    <!-- Bewegter Lichtreflex, innerhalb des Körpers beschnitten -->
+    <g clip-path="url(#bodyClip)" pointer-events="none">
+      <rect class="shine" x="-170" y="-60" width="120" height="650" fill="#fff5d4" opacity="0"/>
+    </g>
+  </g>
+</svg>

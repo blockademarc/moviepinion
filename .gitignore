@@ -1,0 +1,27 @@
+# Lokale Konfiguration und Zugangsdaten
+/includes/config.php
+
+# Lokale Poster
+/bilder/poster/
+
+# Lokal erzeugte OMDb-Rohdaten
+/daten/json/*
+!/daten/json/index.php
+/daten/xml/*
+!/daten/xml/index.php
+
+# Lokal erzeugte Exporte und Backups
+/exports/csv/*
+!/exports/csv/index.php
+/exports/json/*
+!/exports/json/index.php
+/exports/xml/*
+!/exports/xml/index.php
+/backups/*
+!/backups/index.php
+
+# Entwicklungsumgebungen und Betriebssystem
+/.idea/
+/.vscode/
+Thumbs.db
+.DS_Store

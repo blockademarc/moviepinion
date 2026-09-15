@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" role="img" aria-labelledby="title desc">
+  <title id="title">MoviePinion Filmportal</title>
+  <desc id="desc">Stilisiertes Filmprojektor-Logo mit Lichtkegel und dem Schriftzug MoviePinion, Filmportal Gruppe 2.</desc>
+
+  <defs>
+    <linearGradient id="projectorBody" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#4a4146"/>
+      <stop offset="0.5" stop-color="#241a20"/>
+      <stop offset="1" stop-color="#120d11"/>
+    </linearGradient>
+    <linearGradient id="metalEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2c4"/>
+      <stop offset="0.22" stop-color="#d9ad61"/>
+      <stop offset="0.52" stop-color="#80552f"/>
+      <stop offset="0.76" stop-color="#f0cf87"/>
+      <stop offset="1" stop-color="#5b351e"/>
+    </linearGradient>
+    <radialGradient id="reelFace" cx="35%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#fff0bf"/>
+      <stop offset="0.26" stop-color="#d5a95b"/>
+      <stop offset="0.62" stop-color="#7f4f2c"/>
+      <stop offset="1" stop-color="#301922"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f0c86b" stop-opacity="0.18"/>
+      <stop offset="0.16" stop-color="#ffe9a3" stop-opacity="0.93"/>
+      <stop offset="0.72" stop-color="#fff7d8" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#f1d391" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="beamCore" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff8d5" stop-opacity="0.52"/>
+      <stop offset="0.5" stop-color="#fffdf2" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#fff1b9" stop-opacity="0.58"/>
+    </linearGradient>
+    <linearGradient id="wine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a33650"/>
+      <stop offset="0.52" stop-color="#741d38"/>
+      <stop offset="1" stop-color="#3b101f"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="blur"/>
+      <feOffset in="blur" dx="0" dy="15" result="offset"/>
+      <feFlood flood-color="#090509" flood-opacity="0.58" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadowLayer"/>
+      <feMerge>
+        <feMergeNode in="shadowLayer"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-25%" y="-70%" width="160%" height="240%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="beamClip">
+      <path d="M358 139 L1555 55 Q1574 54 1574 76 L1574 324 Q1574 346 1555 345 L358 261 Z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .reel-large {
+      transform-box: view-box;
+      transform-origin: 154px 128px;
+      animation: reel-clockwise 16s linear infinite;
+    }
+    .reel-small {
+      transform-box: view-box;
+      transform-origin: 270px 139px;
+      animation: reel-counter 12s linear infinite;
+    }
+    .beam-pulse {
+      animation: beam-pulse 5.5s ease-in-out infinite;
+    }
+    .film-track {
+      stroke-dasharray: 18 18;
+      animation: film-run 7s linear infinite;
+    }
+    .lens-glint {
+      animation: lens-glint 4.8s ease-in-out infinite;
+    }
+    @keyframes reel-clockwise {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes reel-counter {
+      to { transform: rotate(-360deg); }
+    }
+    @keyframes beam-pulse {
+      0%, 100% { opacity: 0.84; }
+      50% { opacity: 1; }
+    }
+    @keyframes film-run {
+      to { stroke-dashoffset: -72; }
+    }
+    @keyframes lens-glint {
+      0%, 72%, 100% { opacity: 0.15; transform: translateX(-8px); }
+      82% { opacity: 0.9; transform: translateX(8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reel-large, .reel-small, .beam-pulse, .film-track, .lens-glint { animation: none; }
+    }
+  </style>
+
+  <!-- Neu gezeichneter Projektor -->
+  <g filter="url(#shadow)">
+    <path d="M72 195 Q72 168 99 168 H281 Q314 168 326 198 L342 235 Q350 254 331 268 Q320 276 302 276 H108 Q72 276 72 240 Z"
+          fill="url(#projectorBody)" stroke="url(#metalEdge)" stroke-width="7"/>
+    <path d="M94 199 H283 Q297 199 303 213 L311 233 H94 Z" fill="#6f1d35" opacity="0.7"/>
+    <rect x="107" y="220" width="114" height="37" rx="8" fill="#151018" stroke="#c99952" stroke-width="4"/>
+    <rect x="121" y="230" width="60" height="6" rx="3" fill="#f1d391" opacity="0.7"/>
+    <rect x="121" y="242" width="80" height="6" rx="3" fill="#9b3148"/>
+    <circle cx="264" cy="229" r="11" fill="#f1d391" stroke="#4d2b1d" stroke-width="4"/>
+    <circle cx="292" cy="229" r="8" fill="#9b3148" stroke="#2b121c" stroke-width="4"/>
+    <path d="M118 275 L86 367" stroke="#30282d" stroke-width="13" stroke-linecap="round"/>
+    <path d="M190 275 L176 372" stroke="#30282d" stroke-width="13" stroke-linecap="round"/>
+    <path d="M259 275 L298 367" stroke="#30282d" stroke-width="13" stroke-linecap="round"/>
+    <path d="M113 275 H265" stroke="#c99952" stroke-width="5" opacity="0.72"/>
+
+    <g class="reel-large">
+      <circle cx="154" cy="128" r="78" fill="#171117" stroke="url(#metalEdge)" stroke-width="9"/>
+      <circle cx="154" cy="128" r="62" fill="url(#reelFace)" stroke="#f1d391" stroke-opacity="0.5" stroke-width="3"/>
+      <g fill="#21151b" stroke="#c99952" stroke-width="3">
+        <path d="M154 73 C179 74 193 89 194 104 C176 112 163 109 154 93 Z"/>
+        <path d="M207 111 C214 135 204 153 190 160 C176 147 174 134 188 120 Z"/>
+        <path d="M187 176 C166 190 145 186 134 176 C139 157 149 148 168 153 Z"/>
+        <path d="M119 177 C97 168 90 148 95 134 C115 130 127 135 131 154 Z"/>
+        <path d="M99 112 C102 87 118 75 133 73 C143 90 142 103 125 113 Z"/>
+      </g>
+      <circle cx="154" cy="128" r="16" fill="#171117" stroke="#f1d391" stroke-width="5"/>
+      <circle cx="154" cy="128" r="5" fill="#fff0bd"/>
+    </g>
+
+    <g class="reel-small">
+      <circle cx="270" cy="139" r="57" fill="#171117" stroke="url(#metalEdge)" stroke-width="8"/>
+      <circle cx="270" cy="139" r="42" fill="url(#reelFace)" stroke="#f1d391" stroke-opacity="0.5" stroke-width="3"/>
+      <g fill="#21151b" stroke="#c99952" stroke-width="2.5">
+        <path d="M270 103 C287 104 297 114 298 124 C286 132 277 129 270 119 Z"/>
+        <path d="M304 129 C309 145 302 157 292 162 C281 154 281 144 289 136 Z"/>
+        <path d="M291 169 C277 179 262 176 255 169 C258 156 266 151 278 154 Z"/>
+        <path d="M247 169 C232 163 228 149 231 139 C244 136 253 140 255 152 Z"/>
+        <path d="M234 127 C236 111 247 104 257 103 C264 114 263 123 252 129 Z"/>
+      </g>
+      <circle cx="270" cy="139" r="12" fill="#171117" stroke="#f1d391" stroke-width="4"/>
+    </g>
+
+    <path d="M221 183 C248 172 278 175 309 191" fill="none" stroke="#111" stroke-width="7"/>
+    <path class="film-track" d="M221 182 C248 171 278 174 309 190" fill="none" stroke="#f1d391" stroke-width="3"/>
+
+    <path d="M323 196 L363 179 Q379 174 387 189 L387 228 Q379 243 363 238 L323 222 Z"
+          fill="url(#projectorBody)" stroke="url(#metalEdge)" stroke-width="6"/>
+    <ellipse cx="382" cy="209" rx="17" ry="36" fill="#180f15" stroke="#f1d391" stroke-width="6"/>
+    <ellipse class="lens-glint" cx="379" cy="197" rx="5" ry="15" fill="#fff6d5"/>
+  </g>
+
+  <!-- Lichtkegel und typografische Fläche -->
+  <g class="beam-pulse">
+    <path d="M384 177 L1555 55 Q1574 54 1574 76 L1574 324 Q1574 346 1555 345 L384 241 Z"
+          fill="url(#beam)" filter="url(#softGlow)"/>
+    <path d="M395 192 L1537 95 L1537 305 L395 226 Z" fill="url(#beamCore)" opacity="0.7"/>
+  </g>
+
+  <g clip-path="url(#beamClip)" opacity="0.34">
+    <path class="film-track" d="M430 101 H1570" fill="none" stroke="#6f1d35" stroke-width="7"/>
+    <path class="film-track" d="M430 300 H1570" fill="none" stroke="#6f1d35" stroke-width="7"/>
+  </g>
+
+  <path d="M446 125 H1455" stroke="#6f1d35" stroke-opacity="0.28" stroke-width="3"/>
+  <path d="M446 284 H1455" stroke="#6f1d35" stroke-opacity="0.28" stroke-width="3"/>
+
+  <g aria-hidden="true">
+    <rect x="454" y="151" width="23" height="88" rx="11.5" fill="url(#wine)"/>
+    <rect x="487" y="151" width="8" height="88" rx="4" fill="#c99952"/>
+  </g>
+
+  <text x="525" y="235"
+        fill="#241219"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="126"
+        font-weight="700"
+        letter-spacing="-4">MoviePinion</text>
+  <text x="532" y="282"
+        fill="#6f1d35"
+        font-family="'Segoe UI', Arial, sans-serif"
+        font-size="28"
+        font-weight="700"
+        letter-spacing="8">FILMPORTAL · GRUPPE 2</text>
+
+  <g fill="#6f1d35" opacity="0.75">
+    <circle cx="1469" cy="178" r="6"/>
+    <circle cx="1492" cy="178" r="6"/>
+    <circle cx="1515" cy="178" r="6"/>
+    <circle cx="1469" cy="224" r="6"/>
+    <circle cx="1492" cy="224" r="6"/>
+    <circle cx="1515" cy="224" r="6"/>
+  </g>
+</svg>
