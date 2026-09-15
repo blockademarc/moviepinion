@@ -2,7 +2,7 @@
 
 MoviePinion ist ein webbasiertes Filmarchiv mit öffentlicher Galerie, Benutzerbereich und separater Administration. Filmdaten werden über die OMDb API abgerufen, als JSON- oder XML-Rohdaten gespeichert und für Suche, Detailansicht, Kommentare, Statistiken und Exporte in eine lokale MySQL-Datenbank übernommen.
 
-![MoviePinion: Kopfbereich mit Logo und Archivsuche](admin/bilder/screenshots/Frontend_Header.webp)
+![MoviePinion: Filmgalerie](admin/bilder/screenshots/Frontend_Galerie.webp)
 
 > Gemeinsam und gleichwertig entwickelt von **Alexander Claußen** und **Martin Frackowiak** als Gruppenprojekt im Modul PHPC im Rahmen ihrer Qualifizierung zu Fachinformatikern für Anwendungsentwicklung.
 
